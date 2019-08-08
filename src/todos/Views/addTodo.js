@@ -1,4 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {addTodo} from '../actions';
+
+//import './style.css';
 
 class AddTodo extends React.Component{
     constructor(props){
@@ -7,6 +12,7 @@ class AddTodo extends React.Component{
             inputText: ''
         }
         this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     onChange(ev){
@@ -27,12 +33,26 @@ class AddTodo extends React.Component{
 
     render(){
         return (
-            <div>
+            <div className="add-todo">
                 <form onSubmit={this.onSubmit}>
-                    <input value={this.state.inputText} onChange={this.onChange}/>
-                    <button type="submit">添加</button>
+                    <input value={this.state.inputText} onChange={this.onChange} className="new-todo" />
+                    <button type="submit" className="add-btn">添加</button>
                 </form>
             </div>
         )
     }
 }
+
+AddTodo.propTypes = {
+    onAdd: PropTypes.func.isRequired,
+}
+
+const mapDispachToProps = (dispatch) => {
+    return {
+        onAdd: (text) => {
+            dispatch(addTodo(text));
+        }
+    }
+};
+
+export default connect(null, mapDispachToProps)(AddTodo);
