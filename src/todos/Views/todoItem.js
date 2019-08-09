@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Icon, Switch} from 'antd';
-import './style.scss';
 
 const TodoItem = ({onToggle, onRemove, completed, text}) => {
   const checkedProp = completed ? {checked: true} : {checked: false};

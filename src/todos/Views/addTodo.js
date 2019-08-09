@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import {addTodo} from '../actions';
 import {Button, Input} from 'antd';
 
-import './style.scss';
-
 class AddTodo extends React.Component{
     constructor(props){
         super(props);
