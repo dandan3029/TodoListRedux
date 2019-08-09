@@ -20,19 +20,14 @@
      添加 
      ```json
      // .babelrc or babel-loader option
-    {
-        "plugins": [
-            ["import", {
-            "libraryName": "antd",
-            "libraryDirectory": "es",
-            "style": "css" // `style: true` 会加载 less 文件
-            }]
-        ]
-    }
-    ```
-    * 然后只需从 antd 引入模块即可，无需单独引入样式。如下：
-    ```js
-    // babel-plugin-import 会帮助你加载 JS 和 CSS
-    import { DatePicker } from 'antd';
+        {
+            "plugins": [
+                ["import", {
+                    "libraryName": "antd",
+                    "libraryDirectory": "es",
+                    "style": "css" // `style: true` 会加载 less 文件
+                }]
+            ]
+        }
     ```
 5. happy hacking! ^_^
