@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {addTodo} from '../actions';
+import {Button, Input} from 'antd';
 
-//import './style.css';
+import './style.scss';
 
 class AddTodo extends React.Component{
     constructor(props){
@@ -35,8 +36,8 @@ class AddTodo extends React.Component{
         return (
             <div className="add-todo">
                 <form onSubmit={this.onSubmit}>
-                    <input value={this.state.inputText} onChange={this.onChange} className="new-todo" />
-                    <button type="submit" className="add-btn">添加</button>
+                    <Input value={this.state.inputText} size="small" onChange={this.onChange} className="new-todo" />
+                    <Button type="primary" size="small" className="add-btn" onClick={this.onSubmit}>添加</Button>
                 </form>
             </div>
         )

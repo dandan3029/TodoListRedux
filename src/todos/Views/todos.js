@@ -1,12 +1,11 @@
 import React from 'react';
 import AddTodo from './addTodo';
 import TodoList from './todoList';
-
-//import './style.css';
+import Style from './style.scss';
 
 export default () => {
     return (
-        <div className="todos">
+        <div className={Style.todos}>
             <AddTodo />
             <TodoList />
         </div>

@@ -5,7 +5,7 @@ import {toggleTodo, removeTodo} from '../actions';
 import FilterTypes from '../../Constants';
 import PropTypes from 'prop-types';
 
-//import './style.css';
+import './style.scss';
 
 const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
     return (
