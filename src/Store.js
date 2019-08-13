@@ -7,4 +7,5 @@ const reducer = combineReducers({
     filter: filterReducer
 }); // combineReducer的存在是因为createSrote中只能接受一个reducer
 
-export default createStore(reducer, {});
+
+export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
